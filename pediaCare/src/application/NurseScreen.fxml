@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NurseScreenController">
+   <children>
+      <Label layoutX="12.0" layoutY="201.0" text="Patient Vitals">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="14.0" text="Patient Info">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="14.0" text="Patient History">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="182.0" text="Nurse Notes">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextField layoutX="14.0" layoutY="51.0" promptText="Patient FIrst Name" />
+      <TextField layoutX="14.0" layoutY="82.0" promptText="Patient Last Name" />
+      <TextField layoutX="14.0" layoutY="115.0" promptText="Patient DOB" />
+      <TextField layoutX="14.0" layoutY="148.0" promptText="Date: MM/DD/YYYY" />
+      <TextField layoutX="14.0" layoutY="238.0" promptText="Weight" />
+      <TextField layoutX="14.0" layoutY="270.0" promptText="Height" />
+      <TextField layoutX="14.0" layoutY="301.0" promptText="Body Temperature" />
+      <TextField layoutX="14.0" layoutY="334.0" promptText="Blood Pressure" />
+      <CheckBox layoutX="14.0" layoutY="368.0" mnemonicParsing="false" text="Patient Over 12?" />
+      <TextField alignment="TOP_LEFT" layoutX="201.0" layoutY="219.0" prefHeight="140.0" prefWidth="265.0" promptText="Enter any notes" />
+      <TextArea layoutX="201.0" layoutY="51.0" prefHeight="128.0" prefWidth="265.0" />
+      <Button contentDisplay="TOP" layoutX="14.0" layoutY="179.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="Search Patient History" />
+      <Button layoutX="481.0" layoutY="350.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: Blue;" text="Save Visit" textFill="WHITE" />
+      <Button layoutX="481.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogInScreen" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: red;" text="Exit" textFill="WHITE" />
+   </children>
+</AnchorPane>
