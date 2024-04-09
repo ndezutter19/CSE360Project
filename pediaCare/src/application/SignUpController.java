@@ -105,7 +105,7 @@ public class SignUpController {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     if (line.contains(firstName) && line.contains(lastName) && line.contains(dob)) {
-                    	messageToUserLabel.setStyle("-fx-text-fill: green;");
+                    	messageToUserLabel.setStyle("-fx-text-fill: red;");
                         throw new IllegalArgumentException("Error: User already exists.");
                     }
                 }
