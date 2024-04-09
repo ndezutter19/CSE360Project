@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Replace "LoginScreen.fxml" with the path to your initial FXML file
-        Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("DoctorMessages.fxml"));
         primaryStage.setTitle("Doctor-Patient Portal");
         primaryStage.setScene(new Scene(root, 600, 400)); // Set the window size
         primaryStage.show();

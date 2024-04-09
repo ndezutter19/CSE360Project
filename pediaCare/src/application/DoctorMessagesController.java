@@ -39,5 +39,9 @@ public class DoctorMessagesController {
 	    window.setScene(logInScene);
 	    window.show();
 	}
+	
+	private void getPatient() {
+		
+	}
 
 }
