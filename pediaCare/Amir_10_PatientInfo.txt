@@ -1,0 +1,14 @@
+Visit Number: 10
+First Name: Amir
+Last Name: dd
+Email: d
+Phone Number: d
+Health History: d
+Insurance ID: dd
+Doctor's Findings:
+First Name: Amir
+Last Name: d
+Date of Birth: d
+Today's Date: d
+Prescriptions: d
+Immunizations: d

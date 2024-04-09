@@ -30,19 +30,20 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <TextField layoutX="14.0" layoutY="51.0" promptText="Patient FIrst Name" />
-      <TextField layoutX="14.0" layoutY="82.0" promptText="Patient Last Name" />
-      <TextField layoutX="14.0" layoutY="115.0" promptText="Patient DOB" />
-      <TextField layoutX="14.0" layoutY="148.0" promptText="Date: MM/DD/YYYY" />
-      <TextField layoutX="14.0" layoutY="238.0" promptText="Weight" />
-      <TextField layoutX="14.0" layoutY="270.0" promptText="Height" />
-      <TextField layoutX="14.0" layoutY="301.0" promptText="Body Temperature" />
-      <TextField layoutX="14.0" layoutY="334.0" promptText="Blood Pressure" />
-      <CheckBox layoutX="14.0" layoutY="368.0" mnemonicParsing="false" text="Patient Over 12?" />
+      <TextField fx:id="firstNameField" layoutX="14.0" layoutY="115.0" promptText="Patient First Name" />
+      <TextField fx:id="lastNameField" layoutX="14.0" layoutY="144.0" promptText="Patient Last Name" />
+      <TextField fx:id="dobField" layoutX="14.0" layoutY="173.0" promptText="Patient DOB" />
+      <TextField fx:id="dateField" layoutX="14.0" layoutY="84.0" promptText="Date: MM/DD/YYYY" />
+      <TextField fx:id="weightField" layoutX="14.0" layoutY="238.0" promptText="Weight" />
+      <TextField fx:id="heightField" layoutX="14.0" layoutY="270.0" promptText="Height" />
+      <TextField fx:id="tempField" layoutX="14.0" layoutY="301.0" promptText="Body Temperature" />
+      <TextField fx:id="bpField" layoutX="14.0" layoutY="334.0" promptText="Blood Pressure" />
+<TextField fx:id="visitNumberField" layoutX="14.0" layoutY="51.0" promptText="Visit Number" />
+      <CheckBox layoutX="201.0" layoutY="368.0" mnemonicParsing="false" text="Patient Over 12?" />
       <TextField alignment="TOP_LEFT" layoutX="201.0" layoutY="219.0" prefHeight="140.0" prefWidth="265.0" promptText="Enter any notes" />
       <TextArea layoutX="201.0" layoutY="51.0" prefHeight="128.0" prefWidth="265.0" />
-      <Button contentDisplay="TOP" layoutX="14.0" layoutY="179.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="Search Patient History" />
-      <Button layoutX="481.0" layoutY="350.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: Blue;" text="Save Visit" textFill="WHITE" />
+      <Button contentDisplay="TOP" layoutX="14.0" layoutY="368.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="160.0" text="Search Patient History" />
+<Button layoutX="481.0" layoutY="350.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: Blue;" text="Save Visit" textFill="WHITE" onAction="#NurseSavesData" />
       <Button layoutX="481.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogInScreen" prefHeight="37.0" prefWidth="105.0" style="-fx-background-color: red;" text="Exit" textFill="WHITE" />
    </children>
 </AnchorPane>
