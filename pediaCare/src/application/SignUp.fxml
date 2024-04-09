@@ -10,26 +10,27 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignUpController">
    <children>
-      <TextField layoutX="49.0" layoutY="129.0" prefHeight="26.0" prefWidth="167.0" promptText="First Name" />
-      <TextField layoutX="49.0" layoutY="164.0" prefHeight="26.0" prefWidth="167.0" promptText="Last Name" />
-      <TextField layoutX="49.0" layoutY="200.0" prefHeight="26.0" prefWidth="167.0" promptText="Date of birth MM/DD/YYYY" />
+      <TextField fx:id="firstNameField" layoutX="49.0" layoutY="129.0" prefHeight="26.0" prefWidth="167.0" promptText="First Name" />
+      <TextField fx:id="lastNameField" layoutX="49.0" layoutY="164.0" prefHeight="26.0" prefWidth="167.0" promptText="Last Name" />
+      <TextField fx:id="dobField" layoutX="49.0" layoutY="200.0" prefHeight="26.0" prefWidth="167.0" promptText="Date of birth MM/DD/YYYY" />
       <Label layoutX="49.0" layoutY="63.0" text="Sign up for an account:">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <Button layoutX="49.0" layoutY="342.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: blue;" text="Register" textFill="WHITE" />
-      <Label layoutX="265.0" layoutY="169.0" text="Your Password:" />
-      <Label layoutX="264.0" layoutY="134.0" text="Your Username:" />
+      <Button fx:id="registerButton" layoutX="49.0" layoutY="342.0" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="26.0" prefWidth="167.0" style="-fx-background-color: blue;" text="Register" textFill="WHITE" />
+      <Label fx:id="generatedPasswordLabel" layoutX="265.0" layoutY="169.0" text="Your Password:" />
+      <Label fx:id="generatedUsernameLabel" layoutX="264.0" layoutY="134.0" text="Your Username:" />
       <Button layoutX="267.0" layoutY="226.0" mnemonicParsing="false" onAction="#switchToLogInScreen" prefWidth="167.0" text="Back to Login" />
-      <RadioButton layoutX="49.0" layoutY="263.0" mnemonicParsing="false" text="Doctor">
+      <RadioButton fx:id="doctorRadio" layoutX="49.0" layoutY="263.0" mnemonicParsing="false" text="Doctor">
          <toggleGroup>
             <ToggleGroup fx:id="account" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton layoutX="49.0" layoutY="287.0" mnemonicParsing="false" text="Patient" toggleGroup="$account" />
-      <RadioButton layoutX="49.0" layoutY="311.0" mnemonicParsing="false" text="Nurse" toggleGroup="$account" />
+      <RadioButton fx:id="patientRadio" layoutX="49.0" layoutY="287.0" mnemonicParsing="false" text="Patient" toggleGroup="$account" />
+      <RadioButton fx:id="nurseRadio" layoutX="49.0" layoutY="311.0" mnemonicParsing="false" text="Nurse" toggleGroup="$account" />
       <Label layoutX="49.0" layoutY="239.0" text="I am a:" />
       <Label layoutX="265.0" layoutY="200.0" text="Note: Store this information before going to login" textFill="RED" />
+      <Label fx:id="messageToUserLabel" layoutX="49.0" layoutY="376.0" prefHeight="17.0" prefWidth="499.0" textFill="RED" />
    </children>
 </AnchorPane>

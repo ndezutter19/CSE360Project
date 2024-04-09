@@ -28,6 +28,7 @@ public class DoctorController {
 	
 	@FXML
 	private void switchToLogInScreen(ActionEvent event) throws IOException {
+		UserSession.clear(); // Clear the current user's session
 	    // Load the LogIn FXML file
 	    Parent logInRoot = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
 	    Scene logInScene = new Scene(logInRoot);
