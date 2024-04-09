@@ -104,7 +104,7 @@ public class SignUpController {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    if (line.contains(firstName) && line.contains(lastName) && line.contains(dob)) {
+                    if (line.contains(firstName) && line.contains(lastName) && line.contains(dob) && line.contains(accountType)) {
                     	messageToUserLabel.setStyle("-fx-text-fill: red;");
                         throw new IllegalArgumentException("Error: User already exists.");
                     }
