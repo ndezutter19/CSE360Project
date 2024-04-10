@@ -1,0 +1,10 @@
+Visit Number: 1
+Today's Date: 89898
+First Name: 8
+Last Name: e
+Date of Birth: e
+Weight: 989
+Height: e
+Body Temperature e
+Blood Pressure: e
+Nurse Notes: e

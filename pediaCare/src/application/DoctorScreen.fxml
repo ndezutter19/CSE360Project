@@ -9,9 +9,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DoctorController">
    <children>
-      <TextField alignment="TOP_LEFT" layoutX="290.0" layoutY="200.0" prefHeight="135.0" prefWidth="256.0" />
-      <TextArea layoutX="10.0" layoutY="251.0" prefHeight="135.0" prefWidth="256.0" />
-      <Label layoutX="14.0" layoutY="213.0" text="Patient History">
+      <TextField fx:id="physicalExamNotes" alignment="TOP_LEFT" layoutX="290.0" layoutY="200.0" prefHeight="135.0" prefWidth="256.0" promptText="Enter Exam notes"  />
+      <TextArea fx:id="visitHistoryTextArea" layoutX="10.0" layoutY="290.0" prefHeight="90.0" prefWidth="256.0" />
+      <Label layoutX="14.0" layoutY="250.0" text="Patient History">
          <font>
             <Font size="30.0" />
          </font>
@@ -43,8 +43,9 @@
          </font>
       </Label>
       <TextField fx:id="visitDateField" layoutX="14.0" layoutY="154.0" prefHeight="26.0" prefWidth="247.0" promptText="Date: MM/DD/YYYY" />
+      <TextField fx:id="visitNumberField" layoutX="14.0" layoutY="187.0" prefWidth="247.0" promptText="Visit Number" />
       <Button layoutX="287.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToDoctorOptionsScreen" prefHeight="37.0" prefWidth="121.0" text="Back to options" />
-      <Button layoutX="14.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="247.0" text="Search Patient History" />
+      <Button layoutX="14.0" layoutY="220.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="247.0" text="Search Patient History" onAction="#displayVisitHistory" />
       <Button layoutX="511.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogInScreen" prefHeight="17.0" prefWidth="77.0" style="-fx-background-color: red;" text="Exit" textFill="WHITE" />
    </children>
 </AnchorPane>

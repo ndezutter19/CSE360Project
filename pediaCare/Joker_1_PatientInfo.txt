@@ -1,0 +1,7 @@
+Visit Number: 1
+First Name: Joker
+Last Name: CHan
+Email: 04/05/2004
+Phone Number: 30
+Health History: 40
+Insurance ID: 33

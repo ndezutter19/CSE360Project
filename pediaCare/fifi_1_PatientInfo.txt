@@ -1,0 +1,50 @@
+Visit Number: 1
+Today's Date: 0909
+First Name: fifi
+Last Name: g
+Date of Birth: jkdjkj
+Weight: 989
+Height: e
+Body Temperature e
+Blood Pressure: e
+Nurse Notes: e
+Doctor's Findings:
+First Name: fifi
+Last Name: g
+Date of Birth: jhjhjs
+Today's Date: sjkjd
+Prescriptions: 
+Immunizations: 
+Exam Notes: 
+Doctor's Findings:
+First Name: fifi
+Last Name: g
+Date of Birth: jhjhjs
+Today's Date: sjkjd
+Prescriptions: 8
+Immunizations: dd
+Exam Notes: 
+Doctor's Findings:
+First Name: fifi
+Last Name: g
+Date of Birth: jhjhjs
+Today's Date: sjkjd
+Prescriptions: 8
+Immunizations: dd
+Exam Notes: 
+Doctor's Findings:
+First Name: fifi
+Last Name: g
+Date of Birth: 888
+Today's Date: dkjkd
+Prescriptions: dkjkdj
+Immunizations: djkjdkj
+Exam Notes: amazing!!!
+Doctor's Findings:
+First Name: fifi
+Last Name: g
+Date of Birth: 888
+Today's Date: dkjkd
+Prescriptions: dkjkdj
+Immunizations: djkjdkj
+Exam Notes: amazing!!!

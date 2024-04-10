@@ -1,0 +1,18 @@
+Visit Number: 1
+Today's Date: 0000
+First Name: Lola
+Last Name: hadi
+Date of Birth: 090
+Weight: 70
+Height: 4u
+Body Temperature f
+Blood Pressure: f
+Nurse Notes: f
+Doctor's Findings:
+First Name: Lola
+Last Name: hadi
+Date of Birth: 0909
+Today's Date: 009
+Prescriptions: allegra
+Immunizations: nope
+Exam Notes: 

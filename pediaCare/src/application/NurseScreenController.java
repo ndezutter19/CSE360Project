@@ -6,10 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -66,6 +70,9 @@ public class NurseScreenController {
 
 	private TextField visitNumberField;
 
+	@FXML
+
+	private TextField nurseNotes;
 
 
 	@FXML
@@ -110,9 +117,10 @@ private void NurseSavesData()
 
 		String patientData = String.format(
 
-				"Visit Number: %s%nFirst Name: %s%nLast Name: %s%nEmail: %s%nPhone Number: %s%nHealth History: %s%nInsurance ID: %s",
+				"Visit Number: %s%nToday's Date: %s%nFirst Name: %s%nLast Name: %s%nDate of Birth: %s%nWeight: %s%nHeight: %s%nBody Temperature %s%nBlood Pressure: %s%nNurse Notes: %s",
 
 				visitNumberField.getText(),
+				dateField.getText(),
 
 				firstNameField.getText(),
 
@@ -126,7 +134,9 @@ private void NurseSavesData()
 
 				tempField.getText(),
 
-				bpField.getText()
+				bpField.getText(),
+				
+				nurseNotes.getText()
 
 				);
 
@@ -177,6 +187,46 @@ private void saveToFile(String visitNumber, String firstname, String data) {
 		//to handle exception
 
 	}
+
+}
+
+@FXML
+private TextArea visitHistoryTextArea;
+
+
+
+
+public void displayVisitHistory() {
+	
+	String patientName = firstNameField.getText();
+    // Assuming the files are stored in the same directory as the application
+    String directoryPath = System.getProperty("user.dir");
+    File directory = new File(directoryPath);
+    File[] files = directory.listFiles((dir, name) -> name.startsWith(patientName) && name.endsWith("_PatientInfo.txt"));
+
+    StringBuilder visitHistory = new StringBuilder();
+
+    if (files != null) {
+
+        for (File file : files) {
+
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                String line;
+
+                while ((line = reader.readLine()) != null) {
+                    visitHistory.append(line).append("\n");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Handle file reading error
+            }
+        }
+    }
+    
+ // Display the combined visit history in the text area
+    System.out.print("Printed");
+    visitHistoryTextArea.setText(visitHistory.toString());
+
 
 }
 
