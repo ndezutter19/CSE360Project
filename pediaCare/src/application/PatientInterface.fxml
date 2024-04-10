@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PatientInterfaceController">
    <children>
-      <Label fx:id="patientGreeting" layoutX="125.0" layoutY="6.0" text="Hello, Patient Name!">
+      <Label fx:id="patientGreeting" layoutX="125.0" layoutY="6.0" text="Welcome!">
          <font>
             <Font size="40.0" />
          </font>
@@ -29,17 +29,17 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="365.0" layoutY="111.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="137.0" text="Update Information" />
+      <Button layoutX="365.0" layoutY="111.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="137.0" text="Update Information" onAction="#patientSavesData" />
       <TextArea layoutX="342.0" layoutY="212.0" prefHeight="142.0" prefWidth="233.0" />
-      <TextArea layoutX="14.0" layoutY="212.0" prefHeight="173.0" prefWidth="281.0" />
-      <TextField layoutX="20.0" layoutY="84.0" promptText="First Name Here" />
-      <TextField layoutX="20.0" layoutY="115.0" promptText="Last Name Here" />
+      <TextArea fx:id="visitHistoryTextArea" layoutX="14.0" layoutY="212.0" prefHeight="173.0" prefWidth="281.0" editable="false" />
+      <TextField fx:id="firstNameField" layoutX="20.0" layoutY="84.0" promptText="First Name Here" />
+      <TextField fx:id="lastNameField" layoutX="20.0" layoutY="115.0" promptText="Last Name Here" />
       <Button layoutX="509.0" layoutY="360.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: Green;" text="Send" textFill="WHITE" />
       <TextField layoutX="342.0" layoutY="360.0" promptText="Send a message..." />
-      <TextField layoutX="20.0" layoutY="147.0" promptText="Phone Number here" />
-      <TextField layoutX="190.0" layoutY="84.0" promptText="Email Here" />
+      <TextField fx:id="phoneNoField" layoutX="20.0" layoutY="147.0" promptText="Phone Number here" />
+      <TextField fx:id="emailField" layoutX="190.0" layoutY="84.0" promptText="Email Here" />
       <Button layoutX="505.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToLogInScreen" prefHeight="34.0" prefWidth="84.0" style="-fx-background-color: red;" text="Exit" textFill="WHITE" />
-      <TextField layoutX="190.0" layoutY="115.0" promptText="Pharmacy Here" />
-      <TextField layoutX="190.0" layoutY="147.0" promptText="Insurance Here" />
+      <TextField fx:id="pharmacyField" layoutX="190.0" layoutY="115.0" promptText="Pharmacy Here" />
+      <TextField fx:id="insuranceField" layoutX="190.0" layoutY="147.0" promptText="Insurance Here" />
    </children>
 </AnchorPane>

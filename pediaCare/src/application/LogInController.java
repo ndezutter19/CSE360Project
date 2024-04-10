@@ -87,8 +87,22 @@ public class LogInController {
 	            loginError.setText("Invalid account type.");
 	            return;
 	    }
+	    
+	    
 
-	    Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+//	    Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+	    
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+	    Parent root = loader.load();
+
+	    // Get the controller associated with the FXML file
+	    if (accountType.equals("Patient")) {
+	        // For patient interface, pass the username to the controller
+	        PatientInterfaceController controller = loader.getController();
+	        controller.setLoggedInUsername(usernameField.getText().trim());
+	    }
+	    
+	    
 	    Scene scene = new Scene(root);
 
 	    Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
