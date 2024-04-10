@@ -6,10 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -103,5 +106,36 @@ public class PatientInterfaceController {
 		}
 
 	}
+	
+//    // New function: Set logged-in username
+    public String loggedInUsername;
+    
+    @FXML
+    private Label patientGreeting;
+    
+
+    public void setLoggedInUsername(String username) {
+        this.loggedInUsername = username;
+//        patientGreeting.setText("Welcome " + username + " !");
+        
+	    String filePath = System.getProperty("user.dir") + "/src/users/users.txt";
+      try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+          String line;
+          while ((line = reader.readLine()) != null) {
+              String[] userDetails = line.split(",");
+
+              if (userDetails[0].equals(username)) {
+              	patientGreeting.setText("Welcome " + userDetails[3] + " !");
+              }
+          }
+      } catch (IOException e) {
+          e.printStackTrace();
+          // Handle file reading error
+      }
+ 
+    }
+    
 
 }
+
+
