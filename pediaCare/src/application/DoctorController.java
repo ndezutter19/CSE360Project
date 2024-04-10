@@ -96,7 +96,7 @@ public class DoctorController {
 	
 	private void addDoctorFindings(String firstName, String doctorFindings) {
         // Construct the file name based on the first name and visit number
-        String fileName = firstName  +  "_10_PatientInfo.txt";
+        String fileName = firstName  +  "3_PatientInfo.txt";
         Path filePath = Paths.get(fileName);
 
         // Check if the file exists
