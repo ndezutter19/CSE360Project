@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -17,9 +18,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class PatientInterfaceController {
-	
+	private String m;
+	private String temp;
+	private String log;
 	@FXML
 	private void switchToLogInScreen(ActionEvent event) throws IOException {
 		UserSession.clear(); // Clear the current user's session
@@ -35,6 +39,13 @@ public class PatientInterfaceController {
 	    window.show();
 	}
 	
+	@FXML
+	private TextField message;
+	@FXML
+	private Button sendMessage;
+	
+	@FXML
+	private TextArea messageLog;
 	@FXML
 
 	private TextField firstNameField;
@@ -86,6 +97,7 @@ public class PatientInterfaceController {
 
 
 			saveToFile(firstNameField.getText(), patientData); //calls method which writes the data to the file
+			
 
 		}
 	
@@ -130,6 +142,8 @@ public class PatientInterfaceController {
               if (userDetails[0].equals(username)) {
               	patientGreeting.setText("Welcome " + userDetails[3] + " !");
               	displayVisitHistory(userDetails[3]); 
+              	readFromMessageLog(userDetails[0]);
+              	m = userDetails[0];
               }
           }
       } catch (IOException e) {
@@ -171,7 +185,89 @@ public class PatientInterfaceController {
         System.out.print("Printed");
         visitHistoryTextArea.setText(visitHistory.toString());
     }
+    public void whenClicked() {
+    	System.out.println(m);
+    	this.loggedInUsername = m;
+
+    	log="";
+    	messageLog.clear();
+		
+		String filePath = System.getProperty("user.dir") + "/src/users/users.txt";
+        try (FileReader f2 = new FileReader(filePath);BufferedReader reader = new BufferedReader(f2)) {//opening file to read from it
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] userDetails = line.split(",");
+                if (userDetails[0].equals(m)) {
+                	temp = userDetails[3];
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            
+        }
+        String g = temp+"MessageLog.txt";
+		 try (FileWriter f = new FileWriter(g,true);PrintWriter outFile = new PrintWriter(f)) {//opening messageLog file to write message in it
+		        outFile.println(temp + " : " + message.getText());
+		        //System.out.print("test");
+		        outFile.close();
+		        try (FileReader f1 = new FileReader(g);BufferedReader rd = new BufferedReader(f1)) {//reading messageLog file with new and previous message to display
+		            String line;
+		            
+		            while ((line = rd.readLine()) != null && !line.isEmpty()) {
+		            	System.out.println(line);
+		                log += line + "\n" ;
+		             
+		            }
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }
+		        
+		        messageLog.clear();
+                messageLog.setText(log);
+		        
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
+    }
     
+    private void readFromMessageLog(String username) {
+    	System.out.println(temp);
+    	this.loggedInUsername = username;
+    	log="";
+    	
+    	String filePath = System.getProperty("user.dir") + "/src/users/users.txt";
+        try (FileReader f = new FileReader(filePath);BufferedReader reader = new BufferedReader(f)) {//checking if user exists
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] userDetails = line.split(",");
+                if (userDetails[0].equals(username)) {
+                	temp = userDetails[3];
+                	System.out.println(temp);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String g = temp+"MessageLog.txt";
+    	try (FileReader f = new FileReader(g);BufferedReader rd = new BufferedReader(f)) {//reading messages from messageLog and displaying as soon as user logs in
+            String line;
+            
+            while ((line = rd.readLine()) != null && !line.isEmpty()) {
+            	System.out.println(line);
+                log += line + "\n" ;
+             
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    	//clear previous messages from message log if any 
+	    messageLog.clear();
+	    //display messages
+        messageLog.setText(log);
+            
+    }
 
 }
 
