@@ -46,7 +46,7 @@ public class LogInController {
 	    String username = usernameField.getText().trim();
 	    String password = passwordField.getText().trim();
 
-	    // Assume default path; adjust if necessary
+	    // Assume default path; adjust path if necessary
 	    String filePath = System.getProperty("user.dir") + "/src/users/users.txt";
 	    File file = new File(filePath);
 
