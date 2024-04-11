@@ -77,6 +77,9 @@ public class SignUpController {
 
         // Attempt to write user information to file
         try {
+        	if(patientRadio.isSelected()) {
+        		createMessageLog(firstNameField.getText());
+        	}
             writeUserInfoToFile(username, password, accountType, firstName, lastName, dob);
             messageToUserLabel.setStyle("-fx-text-fill: green;");
             messageToUserLabel.setText("Registration successful!");
@@ -117,6 +120,16 @@ public class SignUpController {
             writer.write(String.join(",", username, password, accountType, firstName, lastName, dob));
             writer.newLine();
         }
+    }
+    
+    private void createMessageLog(String c) {
+    	String g = firstNameField.getText()+"MessageLog.txt";
+    	try(FileWriter fw = new FileWriter(g,true)){
+    		
+    	}catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    	
     }
 
 }
